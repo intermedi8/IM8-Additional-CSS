@@ -12,9 +12,13 @@ Add an additional CSS file and/or CSS styles for each page or (custom) post.
 
 == Description ==
 
-* Load an additional css file for each page or (custom) post
-* Load additional CSS styles for each page or (custom) post
+**Add an additional CSS file and/or CSS styles for each page or (custom) post.**
+
 * Easy-to-use due to a new _Additional CSS_ meta box on the regular edit page in the WordPress-Admin
+* Multilanguage: currently english and german (please help us with translations if you want to see additional languages)
+* Ad-free (of course, donations are welcome)
+
+If you would like to **contribute** to this plugin, see its <a href="https://github.com/intermedi8/im8-additional-css" target="_blank">**GitHub repository**</a>.
 
 == Installation ==
 
