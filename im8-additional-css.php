@@ -425,5 +425,5 @@ if (IM8AdditionalCSS::has_to_be_loaded())
 	add_action('wp_loaded', array(IM8AdditionalCSS::get_instance(), 'init'));
 
 
-endif; // if (! class_exists(IM8AdditionalCSS))
+endif; // if (! class_exists('IM8AdditionalCSS'))
 ?>
