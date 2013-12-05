@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: IM8 Additional CSS v2.0\n"
+"Project-Id-Version: IM8 Additional CSS v2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-11-29 14:03:50+0000\n"
+"PO-Revision-Date: 2013-12-05 18:00:27+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,22 +20,22 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: im8-additional-css.php:228
+#: im8-additional-css.php:229
 #@ im8-additional-css
 msgid "Additional CSS"
 msgstr "Zusätzliches CSS"
 
-#: im8-additional-css.php:251
+#: im8-additional-css.php:252
 #@ im8-additional-css
 msgid "Additional CSS file"
 msgstr "Zusätzliche CSS-Datei"
 
-#: im8-additional-css.php:257
+#: im8-additional-css.php:258
 #@ im8-additional-css
 msgid "None"
 msgstr "Keine"
 
-#: im8-additional-css.php:278
+#: im8-additional-css.php:279
 #@ im8-additional-css
 msgid "Additional CSS styles"
 msgstr "Zusätzliche CSS-Styles"
@@ -46,7 +46,6 @@ msgstr "Zusätzliche CSS-Styles"
 msgid "IM8 Additional CSS"
 msgstr ""
 
-#. translators: plugin header field 'PluginURI'
 #. translators: plugin header field 'AuthorURI'
 #: im8-additional-css.php:0
 #@ im8-additional-css
@@ -59,13 +58,7 @@ msgstr ""
 msgid "Add an additional CSS file and/or CSS styles for each page or (custom) post."
 msgstr "Füge eine zusätzliche CSS-Datei und/oder CSS-Styles für jede Seite oder (Custom) Post hinzu."
 
-#. translators: plugin header field 'Version'
-#: im8-additional-css.php:0
-#@ im8-additional-css
-msgid "2.0"
-msgstr ""
-
-#: im8-additional-css.php:244
+#: im8-additional-css.php:245
 #@ im8-additional-css
 msgid "Here you can select an additional CSS file or define additional CSS styles which should be loaded for this post or page.<br/><b>In order to show up here, the CSS files have to be located in the \"/css\" sub-folder of your theme.</b>"
 msgstr "Hier kannst du eine zusätzliche CSS-Datei oder zusätzliche CSS-Styles definieren, welche für diesen Artikel oder diese Seite geladen werden sollen.<br/><b>Damit die CSS-Dateien hier erscheinen, müssen diese in deinem Theme im \"/css\"-Unterordner liegen.</b>"
@@ -74,5 +67,17 @@ msgstr "Hier kannst du eine zusätzliche CSS-Datei oder zusätzliche CSS-Styles 
 #: im8-additional-css.php:0
 #@ im8-additional-css
 msgid "intermedi8"
+msgstr ""
+
+#. translators: plugin header field 'PluginURI'
+#: im8-additional-css.php:0
+#@ im8-additional-css
+msgid "http://wordpress.org/plugins/im8-additional-css/"
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: im8-additional-css.php:0
+#@ im8-additional-css
+msgid "2.1"
 msgstr ""
 

@@ -32,6 +32,11 @@ If you would like to **contribute** to this plugin, see its <a href="https://git
 
 == Changelog ==
 
+= 2.1 =
+* Bugfix in `autoupdate` routine
+* wrapped plugin in `if (! class_exists('IM8AdditionalCSS'))`
+* optimized `uninstall` routine
+
 = 2.0 =
 * Complete refactoring (object oriented programming)
 * More usage of WordPress core functions
