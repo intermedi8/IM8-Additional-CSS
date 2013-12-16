@@ -3,7 +3,7 @@
  * Plugin Name: IM8 Additional CSS
  * Plugin URI: http://wordpress.org/plugins/im8-additional-css/
  * Description: Add an additional CSS file and/or CSS styles for each page or (custom) post.
- * Version: 2.1
+ * Version: 2.2
  * Author: intermedi8
  * Author URI: http://intermedi8.de
  * License: MIT
@@ -34,7 +34,7 @@ class IM8AdditionalCSS {
 	 *
 	 * @type	string
 	 */
-	protected $version = '2.1';
+	protected $version = '2.2';
 
 
 	/**

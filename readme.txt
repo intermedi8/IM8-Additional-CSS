@@ -3,7 +3,7 @@ Contributors: intermedi8
 Donate link: http://intermedi8.de
 Tags: css, styles, post, page, custom post type, additional
 Requires at least: 2.9.2
-Tested up to: 3.7.1
+Tested up to: 3.8
 Stable tag: trunk
 License: MIT
 License URI: http://opensource.org/licenses/MIT
@@ -31,6 +31,9 @@ If you would like to **contribute** to this plugin, see its <a href="https://git
 1. **Additional CSS** Meta Box
 
 == Changelog ==
+
+= 2.2 =
+* Compatible up to WordPress 3.8
 
 = 2.1 =
 * Bugfix in `autoupdate` routine
