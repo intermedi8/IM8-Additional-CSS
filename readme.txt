@@ -28,9 +28,14 @@ If you would like to **contribute** to this plugin, see its <a href="https://git
 
 == Screenshots ==
 
-1. **Additional CSS** Meta Box
+1. **Additional CSS meta box** - Here you can add an additional CSS file and/or CSS styles.
 
 == Changelog ==
+
+= 2.3 =
+* added direct access guard
+* removed trailing `?>`
+* in `get_post_types` function, changed argument `'public' => true` to `'show_ui' => true`
 
 = 2.2 =
 * Compatible up to WordPress 3.8

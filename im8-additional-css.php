@@ -3,7 +3,7 @@
  * Plugin Name: IM8 Additional CSS
  * Plugin URI: http://wordpress.org/plugins/im8-additional-css/
  * Description: Add an additional CSS file and/or CSS styles for each page or (custom) post.
- * Version: 2.2
+ * Version: 2.3
  * Author: intermedi8
  * Author URI: http://intermedi8.de
  * License: MIT
@@ -11,6 +11,11 @@
  * Text Domain: im8-additional-css
  * Domain Path: /languages
  */
+
+
+// Exit on direct access
+if (! defined('ABSPATH'))
+	exit;
 
 
 if (! class_exists('IM8AdditionalCSS')) :
@@ -34,7 +39,7 @@ class IM8AdditionalCSS {
 	 *
 	 * @type	string
 	 */
-	protected $version = '2.2';
+	protected $version = '2.3';
 
 
 	/**
@@ -70,7 +75,7 @@ class IM8AdditionalCSS {
 
 
 	/**
-	 * Constructor. Registers activation routine.
+	 * Constructor. Register activation routine.
 	 *
 	 * @hook	wp_loaded
 	 * @return	void
@@ -95,7 +100,7 @@ class IM8AdditionalCSS {
 
 
 	/**
-	 * Registers uninstall routine.
+	 * Register uninstall routine.
 	 *
 	 * @hook	activation
 	 * @return	void
@@ -106,7 +111,7 @@ class IM8AdditionalCSS {
 
 
 	/**
-	 * Checks if the plugin has to be loaded.
+	 * Check if the plugin has to be loaded.
 	 *
 	 * @return	boolean
 	 */
@@ -128,7 +133,7 @@ class IM8AdditionalCSS {
 
 
 	/**
-	 * Registers plugin actions.
+	 * Register plugin actions.
 	 *
 	 * @hook	wp_loaded
 	 * @return	void
@@ -153,7 +158,7 @@ class IM8AdditionalCSS {
 
 
 	/**
-	 * Checks for and performs necessary updates.
+	 * Check for and perform necessary updates.
 	 *
 	 * @hook	admin_init
 	 * @return	void
@@ -217,7 +222,7 @@ class IM8AdditionalCSS {
 
 
 	/**
-	 * Adds plugin meta box for all public post type posts.
+	 * Add plugin meta box for all public post type posts.
 	 *
 	 * @hook	add_meta_boxes
 	 * @return	void
@@ -291,7 +296,7 @@ class IM8AdditionalCSS {
 
 
 	/**
-	 * Saves meta data.
+	 * Save meta data.
 	 *
 	 * @hook	save_post
 	 * @param	int $id ID of the saved post.
@@ -319,14 +324,14 @@ class IM8AdditionalCSS {
 
 
 	/**
-	 * Gets relevant post types.
+	 * Get relevant post types.
 	 *
 	 * @see		add_meta_box()
 	 * @return	array Post types.
 	 */
 	protected function get_post_types() {
 		$args = array(
-			'public' => true,
+			'show_ui' => true,
 		);
 		if (! is_array($types = get_post_types($args)))
 			return array();
@@ -337,7 +342,7 @@ class IM8AdditionalCSS {
 
 
 	/**
-	 * Loads plugin textdomain.
+	 * Load plugin textdomain.
 	 *
 	 * @return	void
 	 */
@@ -357,7 +362,7 @@ class IM8AdditionalCSS {
 
 
 	/**
-	 * Enqueues the additional CSS file for the current post.
+	 * Enqueue the additional CSS file for the current post.
 	 *
 	 * @hook	wp_enqueue_scripts
 	 * @return	void
@@ -378,7 +383,7 @@ class IM8AdditionalCSS {
 
 
 	/**
-	 * Prints the additional CSS style fo the current post.
+	 * Print the additional CSS style fo the current post.
 	 *
 	 * @hook	wp_print_styles
 	 * @return	void
@@ -401,7 +406,7 @@ class IM8AdditionalCSS {
 
 
 	/**
-	 * Deletes plugin data on uninstall.
+	 * Delete plugin data on uninstall.
 	 *
 	 * @hook	uninstall
 	 * @return	void
@@ -426,4 +431,3 @@ if (IM8AdditionalCSS::has_to_be_loaded())
 
 
 endif; // if (! class_exists('IM8AdditionalCSS'))
-?>
