@@ -32,6 +32,9 @@ If you would like to **contribute** to this plugin, see its <a href="https://git
 
 == Changelog ==
 
+= 2.4 =
+* fixed bug that prevented plugin from being loaded when activated network-wide
+
 = 2.3 =
 * added direct access guard
 * removed trailing `?>`

@@ -3,7 +3,7 @@
  * Plugin Name: IM8 Additional CSS
  * Plugin URI: http://wordpress.org/plugins/im8-additional-css/
  * Description: Add an additional CSS file and/or CSS styles for each page or (custom) post.
- * Version: 2.3
+ * Version: 2.4
  * Author: intermedi8
  * Author URI: http://intermedi8.de
  * License: MIT
@@ -39,7 +39,7 @@ class IM8AdditionalCSS {
 	 *
 	 * @type	string
 	 */
-	protected $version = '2.3';
+	protected $version = '2.4';
 
 
 	/**
@@ -111,15 +111,16 @@ class IM8AdditionalCSS {
 
 
 	/**
-	 * Check if the plugin has to be loaded.
+	 * Check if the plugin has to be initialized.
 	 *
+	 * @hook	plugins_loaded
 	 * @return	boolean
 	 */
-	public static function has_to_be_loaded() {
+	public static function init_on_demand() {
 		global $pagenow;
 
 		if (empty($pagenow))
-			return false;
+			return;
 
 		self::$page_base = basename($pagenow, '.php');
 		$admin_pages = array(
@@ -128,8 +129,11 @@ class IM8AdditionalCSS {
 			'plugins',
 		);
 
-		return ! is_admin() || in_array(self::$page_base, $admin_pages);
-	} // function has_to_be_loaded
+		if (is_admin() && ! in_array(self::$page_base, $admin_pages))
+			return;
+
+		add_action('wp_loaded', array(self::$instance, 'init'));
+	} // function init_on_demand
 
 
 	/**
@@ -426,8 +430,7 @@ class IM8AdditionalCSS {
 } // class IM8AdditionalCSS
 
 
-if (IM8AdditionalCSS::has_to_be_loaded())
-	add_action('wp_loaded', array(IM8AdditionalCSS::get_instance(), 'init'));
+add_action('plugins_loaded', array(IM8AdditionalCSS::get_instance(), 'init_on_demand'));
 
 
 endif; // if (! class_exists('IM8AdditionalCSS'))
