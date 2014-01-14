@@ -32,6 +32,10 @@ If you would like to **contribute** to this plugin, see its <a href="https://git
 
 == Changelog ==
 
+= 2.5 =
+* integrated plugin update message
+* corrected some DocBlocks
+
 = 2.4 =
 * fixed bug that prevented plugin from being loaded when activated network-wide
 

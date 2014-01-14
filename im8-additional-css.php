@@ -3,7 +3,7 @@
  * Plugin Name: IM8 Additional CSS
  * Plugin URI: http://wordpress.org/plugins/im8-additional-css/
  * Description: Add an additional CSS file and/or CSS styles for each page or (custom) post.
- * Version: 2.4
+ * Version: 2.5
  * Author: intermedi8
  * Author URI: http://intermedi8.de
  * License: MIT
@@ -39,7 +39,7 @@ class IM8AdditionalCSS {
 	 *
 	 * @type	string
 	 */
-	protected $version = '2.4';
+	protected $version = '2.5';
 
 
 	/**
@@ -75,9 +75,17 @@ class IM8AdditionalCSS {
 
 
 	/**
+	 * Plugin repository.
+	 *
+	 * @type	string
+	 */
+	protected $repository = 'im8-additional-css';
+
+
+	/**
 	 * Constructor. Register activation routine.
 	 *
-	 * @hook	wp_loaded
+	 * @see		get_instance()
 	 * @return	void
 	 */
 	public function __construct() {
@@ -88,7 +96,7 @@ class IM8AdditionalCSS {
 	/**
 	 * Get plugin instance.
 	 *
-	 * @hook	wp_loaded
+	 * @hook	plugins_loaded
 	 * @return	object IM8AdditionalCSS
 	 */
 	public static function get_instance() {
@@ -154,6 +162,9 @@ class IM8AdditionalCSS {
 				add_action('add_meta_boxes', array($this, 'add_meta_box'));
 				add_action('save_post', array($this, 'save_meta_data'));
 			}
+
+			if ('plugins' === self::$page_base)
+				add_action('in_plugin_update_message-'.basename(dirname(__FILE__)).'/'.basename(__FILE__), array($this, 'update_message'), 10, 2);
 		} else {
 			add_action('wp_enqueue_scripts', array($this, 'enqueue_additional_css_file'));
 			add_action('wp_print_styles', array($this, 'print_additional_css'));
@@ -325,6 +336,47 @@ class IM8AdditionalCSS {
 		if (-1 != $meta_value) update_post_meta($id, $meta_key, $meta_value);
 		else delete_post_meta($id, $meta_key);
 	} // function save_meta_data
+
+
+	/**
+	 * Print update message based on current plugin version's readme file.
+	 *
+	 * @hook	in_plugin_update_message-{$file}
+	 * @param	array $plugin_data Plugin metadata.
+	 * @param	array $r Metadata about the available plugin update.
+	 * @return	void
+	 */
+	public function update_message($plugin_data, $r) {
+		if ($plugin_data['update']) {
+			$readme = wp_remote_fopen('http://plugins.svn.wordpress.org/'.$this->repository.'/trunk/readme.txt');
+			if (! $readme)
+				return;
+
+			$pattern = '/==\s*Changelog\s*==(.*)=\s*'.preg_quote($this->version).'\s*=/s';
+			if (
+				false === preg_match($pattern, $readme, $matches)
+				|| ! isset($matches[1])
+			)
+				return;
+
+			$changelog = (array) preg_split('/[\r\n]+/', trim($matches[1]));
+			if (empty($changelog))
+				return;
+
+			$output = '<div style="margin: 8px 0 0 26px;">';
+			$output .= '<ul style="margin-left: 14px; line-height: 1.5; list-style: disc outside none;">';
+
+			$item_pattern = '/^\s*\*\s*/';
+			foreach ($changelog as $line)
+				if (preg_match($item_pattern, $line))
+					$output .= '<li>'.preg_replace('/`([^`]*)`/', '<code>$1</code>', htmlspecialchars(preg_replace($item_pattern, '', trim($line)))).'</li>';
+
+			$output .= '</ul>';
+			$output .= '</div>';
+
+			echo $output;
+		}
+	} // function update_message
 
 
 	/**
