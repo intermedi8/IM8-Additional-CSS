@@ -3,7 +3,7 @@ Contributors: intermedi8
 Donate link: http://intermedi8.de
 Tags: css, styles, post, page, custom post type, additional
 Requires at least: 2.9.2
-Tested up to: 3.8
+Tested up to: 3.8.1
 Stable tag: trunk
 License: MIT
 License URI: http://opensource.org/licenses/MIT
@@ -15,7 +15,7 @@ Add an additional CSS file and/or CSS styles for each page or (custom) post.
 **Add an additional CSS file and/or CSS styles for each page or (custom) post.**
 
 * Easy-to-use due to a new _Additional CSS_ meta box on the regular edit page in the WordPress-Admin
-* Multilanguage: currently english and german (please help us with translations if you want to see additional languages)
+* Multilanguage: currently English and German (please help us with translations if you want to see additional languages)
 * Ad-free (of course, donations are welcome)
 
 If you would like to **contribute** to this plugin, see its <a href="https://github.com/intermedi8/im8-additional-css" target="_blank">**GitHub repository**</a>.
@@ -32,6 +32,10 @@ If you would like to **contribute** to this plugin, see its <a href="https://git
 
 == Changelog ==
 
+= 2.5.1 =
+* compatible up to WordPress 3.8.1
+* added some `index.php` files
+
 = 2.5 =
 * integrated plugin update message
 * corrected some DocBlocks
@@ -45,21 +49,21 @@ If you would like to **contribute** to this plugin, see its <a href="https://git
 * in `get_post_types` function, changed argument `'public' => true` to `'show_ui' => true`
 
 = 2.2 =
-* Compatible up to WordPress 3.8
+* compatible up to WordPress 3.8
 
 = 2.1 =
-* Bugfix in `autoupdate` routine
+* bugfix in `autoupdate` routine
 * wrapped plugin in `if (! class_exists('IM8AdditionalCSS'))`
 * optimized `uninstall` routine
 
 = 2.0 =
-* Complete refactoring (object oriented programming)
-* More usage of WordPress core functions
-* Moved screenshot to `assets` folder
-* Added banner image
+* complete refactoring (object oriented programming)
+* more usage of WordPress core functions
+* moved screenshot to `assets` folder
+* added banner image
 
 = 1.1 =
-* Fixed an error message when CSS directory is not available (credits go to Christian Gnos from dunkelweiss GmbH for reporting this bug)
+* fixed an error message when CSS directory is not available (credits go to Christian Gnos from dunkelweiss GmbH for reporting this bug)
 
 = 1.0 =
-* Initial release
+* initial release
